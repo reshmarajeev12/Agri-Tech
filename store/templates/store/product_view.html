@@ -1,0 +1,48 @@
+{% extends "store/main.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-4">
+    <div class="row">
+    <div class="col-md-4">
+    <div class="row">
+<img class="thumbnail" src="{{product.imageURL}}"class="card-img-top" alt="" style="width: 300px; height: 400px;">
+    </div>
+    <br>
+    <div class="row">
+        <button data-product="{{product.id}}" data-action="add" class="btn add-btn update-cart"
+        style="background-color: #8c5d4f; color: white; width: 15rem;">Add To Cart</button>    </div>
+</div>
+<div class="col-md-8">
+    <h3>{{product.name}}</h3>
+    <p style="font-size: 25px;"><b>₹ {{product.price}}</b></p>
+    <br>
+    <h5>Key Features:</h5>
+    <ul>
+        <li>{{product.feature}}</li>
+        
+    </ul>
+    <br>
+
+    <br>
+    <h5>Video for Cultivation:</h5>
+    <ul>
+        <li><iframe width="556" height="338" src="{{product.link}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+        
+
+        
+       
+    </ul>
+    <br>
+
+
+
+
+ </div>   
+</div>
+</div>
+
+   
+
+
+{% endblock content %}

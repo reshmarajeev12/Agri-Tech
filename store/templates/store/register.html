@@ -1,0 +1,26 @@
+{% extends "store/main.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="content-section col-md-8 col-md-offset-2">
+  <form method="POST" style="border: 1px solid black; margin: 4%; padding:10%; border-radius:1%;">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      {{ form|crispy}}
+
+      <label for="farmer">Are you a farmer? :</label>
+
+      <select name="farmer" id="farmer">
+        <option value="farmer">Yes</option>
+        <option value="user">No</option>
+      </select>
+    </fieldset> 
+    <center>
+      <button class="btn btn-success w-100" type="submit"><span class="glyphicon glyphicon-check"></span> &nbsp; sign up</button>
+    </center>
+    <br />
+    <p>Already have an account ?</p>
+    <a class="btn btn-success" href="{% url 'login' %}">Login</a>
+  </form>
+</div>
+{% endblock content %}

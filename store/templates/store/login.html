@@ -1,0 +1,61 @@
+{% extends "store/main.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+ <div class="content-section col-md-8 col-md-offset-2">
+  
+  <style>
+    body {
+      background-image: url(https://img.freepik.com/premium-photo/rice-field-morning_62193-1385.jpg?size=626&ext=jpg&ga=GA1.1.664839807.1685881195&semt=ais);
+      background-position: right bottom,
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+
+    }
+
+  </style>
+  <style>
+
+
+    
+    h1 {
+      
+      color: rgb(0,100,0);;
+    }
+    
+
+    p.thick {
+      font-weight: bold;
+    }
+    
+   
+  </style>
+   <h1>AGRITECH</h1>
+
+  <p class="thick">Agritech is ecommerce platform where Farmers directly connect with customers...Welcome to our website!!!</p>
+  <center>
+    <div>
+      
+
+      <form method="POST" style="border: 1px solid black;  margin: 4%; padding:10%; border-radius:1%;background-color: rgba(255, 255, 255, 0.7);">
+    {% csrf_token %}
+  
+
+    <fieldset class="form-group">
+      {{ form|crispy}}
+    </fieldset>
+   <center>
+
+    
+    <button class="btn btn-success w-100" type="submit">login</button>
+  </center>
+  <br/>
+
+  <p>don't have an account,</p>
+  <a class="btn btn-success" href="{% url 'register' %}">sign up</a>
+  </form>
+</div>
+</center>
+ </div>
+{% endblock content %}
